@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.Head {
+    height: 4.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    background-color: #F44;
+}
+.Head .navdesktop {
+    width: 28rem;
+}
+.Head .navdesktop ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.Head .navdesktop li a{
+    text-decoration: none;
+    font-style: italic;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 400;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.Head .navdesktop li a:hover{
+    color: darkblue;
+}
+
+.Head .navmobile, .menumobile {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.Head img.cart {
+    width: 1.85rem;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .Head .navdesktop {
+        display: none;
+    }
+
+    .Head .menumobile {
+        display: block;
+        width: 1.5rem;
+        height: 1.45rem;
+        cursor: pointer;
+    }
+
+    .Head .navmobile {
+        display: block;
+        width: 1.3rem;
+        height: 0.12rem;
+        background-color: #FFF;
+        border-radius: 4px;
+        position: relative;
+        top: 0.65rem;
+        left: 0.1rem;
+    }
+    .Head .navmobile::after, .Head .navmobile::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: inherit;
+        width: inherit;
+        height: inherit;
+    }
+    .Head .navmobile::after {
+        top: 0.5rem;
+    }
+    .Head .navmobile::before {
+        bottom: 0.5rem;
+    }
+
+    .Head .navmobile ul.scaleUl {
+        width: 8rem;
+        background-color: black;
+        position: relative;
+        top: 2.25rem;
+        left: -1rem;
+        display: block;
+        list-style: none;
+        transform: scale(0);
+        transition: 0.4s;
+    }
+
+    .menumobile:hover .navmobile ul.scaleUl {
+        transform: scale(1);
+    }
+
+    .Head .navmobile ul.scaleUl li {
+        border-bottom: 1px solid red;
+        text-align: center;
+        padding: 10px 0;
+        font-family: 'Josefin Slab', serif;
+        font-size: 1.1rem;
+    }
+
+    .Head .navmobile ul.scaleUl li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .Head img.cart {
+        width: 2.2rem;
+    }
+}
