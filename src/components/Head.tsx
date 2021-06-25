@@ -7,8 +7,6 @@ export default function Head() {
                 <ul>
                     <li><a href=".Head">HQ STORE</a></li>
                     <li><a href=".About-us">ABOUT US</a></li>
-                    <li><a href=".Comics">COMICS</a></li>
-                    <li><a href=".Cart">CART</a></li>
                 </ul>
             </nav>
 
