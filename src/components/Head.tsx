@@ -1,3 +1,5 @@
+import About from './About'
+
 import styles from '../styles/components/Head.module.css'
 
 export default function Head() {
@@ -15,14 +17,13 @@ export default function Head() {
                     <ul className={styles.scaleUl}>
                         <li><a href=".Head">HQ STORE</a></li>
                         <li><a href=".About-us">ABOUT US</a></li>
-                        <li><a href=".Comics">COMICS</a></li>
-                        <li><a href=".Cart">CART</a></li>
                     </ul>
                 </nav>
             </div>
 
             <img src="images/cart.svg" alt="cart-shop" className={styles.cart} />
             
+            <About />
         </div>
     )
 }

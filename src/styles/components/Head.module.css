@@ -9,18 +9,18 @@
     background-color: #F44;
 }
 .Head .navdesktop {
-    width: 28rem;
+    width: 22rem;
 }
 .Head .navdesktop ul{
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .Head .navdesktop li a{
     text-decoration: none;
     font-style: italic;
     color: #FFF;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Josefin Slab', serif;
     font-weight: 400;
     transition: 0.4s;
