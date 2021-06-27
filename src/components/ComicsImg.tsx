@@ -1,36 +1,53 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from '../styles/components/ComicsImg.module.css'
 import { Card } from 'antd';
-import ComicInfo from './ComicInfo';
+
 
 interface cardProps {
-    img: string;
-    title: String;
-    description: String;
-    characters: String;
-    creators: String;
-    price: Number;
+    id: string,
+    title: string,
+    description: string,
+    characters: string,
+    creators: string,
+    price: number,
+    thumbnail: {
+        path: string,
+        extension: string
+    }
 }
 
-const ComicsImg: React.FC<cardProps> = ({img, title, description, characters, creators, price}) => {
+const ComicsImg: React.FC<cardProps> = ({id, title, description, characters, creators, price, thumbnail}) => {
+
+    var thumb = String(thumbnail.path + '.' + thumbnail.extension);
+    const imgTest = {
+        backgroundImage: `url(${thumb})`,
+
+    }
+
+    var propies = {
+        idInfo: id,
+        titleInfo: title,
+        descriptionInfo: description,
+        charactersInfo: characters,
+        creatoresInfo: creators,
+        priceInfo: price,
+        thumbInfo: thumb
+    }
 
     return (
         <Card>
             <div className={styles.ComicsImg}>
-                <div className={styles.imgtest}>
+                <div className={styles.imgtest} style={imgTest}>
                     
-                    <div className={styles.imgbg}>
-                        <img src={img} alt="comic thumbnail" />
-                    </div>
+                    <div className={styles.imgbg}></div>
                     <div className={styles.imgdescription}>
-                        <p>Marvel Comics</p>
+                        <p>{title}</p>
                         <div className={styles.imgbutton}>Comprar</div>
                     </div>
                     
                 </div>
             </div>
 
-            <ComicInfo img='aa' title='a' description='' characters='' creators='' price={10} />
         </Card>
     );
 }

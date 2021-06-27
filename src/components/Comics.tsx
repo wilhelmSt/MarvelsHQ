@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Card, Row, Divider } from 'antd';
 import api from '../services/api';
+import ComicsImg from './ComicsImg';
+
+import styles from '../styles/components/Comics.module.css'
 
 const { Content } = Layout;
 
 interface ResponseData {
     id: string,
-    name: string,
     title: string,
     description: string,
+    characters: string,
+    creators: string,
+    price: number,
     thumbnail: {
         path: string,
         extension: string
@@ -16,49 +21,33 @@ interface ResponseData {
 }
 
 const Comics: React.FC = () => {
-    const [characteres, setCharacteres] = useState<ResponseData[]>([]);
+    const [comic, setComic] = useState<ResponseData[]>([]);
 
     useEffect(() => {
         api
             .get('/comics')
             .then(response => {
-                setCharacteres(response.data.data.results)
+                setComic(response.data.data.results)
             })
             .catch(err => console.log('Ocorreu um erro', err))
     }, [])
 
     return (
-        <Layout >
-            <Content style={{ alignItems: "center", height: "calc(100vh - 55px)", minHeight: "100%" }}>
-                {characteres.map(character => {
+        <div className={styles.Comics}>
+            <div className={styles.ComicHead}>
+                <h1>Marvel's Comics</h1>
+                <div></div>
+            </div>
+            <div className={styles.Imagens}>
+                {comic.map(comic => {
                     return (
-                        <Row
-                            gutter={16}
-                            style={{ alignItems: "center", }}
-                        >
-                            <Card style={{ padding: 30 }} key={character.id} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-                                <div style={{ maxWidth: '700px' }}>
-                                    <h2
-                                        style={{
-                                            paddingTop: 45,
-                                            fontWeight: 600,
-                                        }}
-                                    >
-                                        {character.title}
-                                    </h2>
-
-                                    <Divider />
-                                    <p style={{ textAlign: 'justify', fontWeight: 400 }}>
-                                        {character.description}
-                                    </p>
-                                </div>
-                            </Card>
-                        </Row>
+                        <>
+                            <ComicsImg id={comic.id} title={comic.title} description={comic.description} characters={comic.characters} creators={comic.creators} price={comic.price} thumbnail={comic.thumbnail} />
+                        </>
                     )
                 })}
-
-            </Content>
-        </Layout >
+            </div>
+        </div>
     )
 }
 
