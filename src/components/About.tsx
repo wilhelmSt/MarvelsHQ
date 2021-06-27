@@ -1,19 +1,10 @@
 import styles from '../styles/components/About.module.css'
-import styled from 'styled-components'
-
-function exitAbout() {
-    var about = document.querySelector<HTMLElement>(".About");
-    var about = styled.div`
-        display: none;
-    `;
-    alert('clicloou');
-}
 
 export default function About() {
     return (
         <div className={styles.About}>
             <div className={styles.AboutContent}>
-                <div className={styles.exitButton} onClick={exitAbout}>X</div>
+                <div className={styles.exitButton}>X</div>
 
                 <h2>About us</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus diam, posuere non arcu id, 

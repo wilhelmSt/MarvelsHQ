@@ -23,7 +23,7 @@ export default function Head() {
 
             <img src="images/cart.svg" alt="cart-shop" className={styles.cart} />
             
-            <About />
+            {/** <About /> */}
         </div>
     )
 }
