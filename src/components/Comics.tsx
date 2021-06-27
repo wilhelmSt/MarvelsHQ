@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, Card, Image, Row, Divider } from 'antd';
+import { Layout, Card, Row, Divider } from 'antd';
 import api from '../services/api';
 
-const { Header, Footer, Sider, Content } = Layout;
-const { Meta } = Card;
+const { Content } = Layout;
 
 interface ResponseData {
     id: string,

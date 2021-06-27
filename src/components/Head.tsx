@@ -1,5 +1,3 @@
-import About from './About'
-
 import styles from '../styles/components/Head.module.css'
 
 export default function Head() {
