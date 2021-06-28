@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 .Head {
-    height: 4.2rem;
+    height: 4.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,24 +9,29 @@
     background-color: #F44;
 }
 .Head .navdesktop {
-    width: 22rem;
+    width: 16rem;
 }
 .Head .navdesktop ul{
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
-.Head .navdesktop li a{
+.Head .navdesktop ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
     text-decoration: none;
     font-style: italic;
     color: #FFF;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-family: 'Josefin Slab', serif;
     font-weight: 400;
     transition: 0.4s;
     cursor: pointer;
 }
-.Head .navdesktop li a:hover{
+.Head .navdesktop li:hover{
     color: darkblue;
 }
 

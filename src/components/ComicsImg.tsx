@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from '../styles/components/ComicsImg.module.css'
-import { Card } from 'antd';
 
+
+import { Card} from 'antd';
 
 interface cardProps {
     id: string,
@@ -17,21 +18,11 @@ interface cardProps {
 }
 
 const ComicsImg: React.FC<cardProps> = ({id, title, description, characters, creators, price, thumbnail}) => {
-
+    
     var thumb = String(thumbnail.path + '.' + thumbnail.extension);
     const imgTest = {
         backgroundImage: `url(${thumb})`,
 
-    }
-
-    var propies = {
-        idInfo: id,
-        titleInfo: title,
-        descriptionInfo: description,
-        charactersInfo: characters,
-        creatoresInfo: creators,
-        priceInfo: price,
-        thumbInfo: thumb
     }
 
     return (
@@ -42,7 +33,6 @@ const ComicsImg: React.FC<cardProps> = ({id, title, description, characters, cre
                     <div className={styles.imgbg}></div>
                     <div className={styles.imgdescription}>
                         <p>{title}</p>
-                        <div className={styles.imgbutton}>Comprar</div>
                     </div>
                     
                 </div>

@@ -5,7 +5,7 @@ export default function Head() {
         <div className={styles.Head}>
             <nav className={styles.navdesktop}>
                 <ul>
-                    <li><a>HQ STORE</a></li>
+                    <li>HQ STORE</li>
                 </ul>
             </nav>
 

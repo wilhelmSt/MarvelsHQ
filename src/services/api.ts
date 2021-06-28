@@ -16,7 +16,7 @@ const api = axios.create({
         apikey: publicKey,
         hash,
         offset: 3,
-        limit: 10
+        limit: 12
     },
 })
 

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, Card, Row, Divider } from 'antd';
+import { Button } from 'antd';
 import api from '../services/api';
 import ComicsImg from './ComicsImg';
 
 import styles from '../styles/components/Comics.module.css'
-
-const { Content } = Layout;
+import Swal from 'sweetalert2';
 
 interface ResponseData {
     id: string,
@@ -32,6 +31,8 @@ const Comics: React.FC = () => {
             .catch(err => console.log('Ocorreu um erro', err))
     }, [])
 
+    
+
     return (
         <div className={styles.Comics}>
             <div className={styles.ComicHead}>
@@ -40,13 +41,43 @@ const Comics: React.FC = () => {
             </div>
             <div className={styles.Imagens}>
                 {comic.map(comic => {
+                    const successAlert = () => {
+                        const title = comic.title;
+                        const desc = comic.description;
+                        const char = comic.characters;
+                        Swal.fire({
+                            title: title,
+                            html: "<p>" +desc+ "</p>" +
+                                  "<h2> Personagens: </h2>" +
+                                  "<p>" +char+ "</p>",
+                            backdrop: 'rgba(0,0,123,0.4)',
+                            background: 'white',
+                            showCancelButton: true,
+                            cancelButtonColor: '#E62429',
+                            cancelButtonText: 'Cancelar',
+                            confirmButtonColor: '#34DB31', 
+                            confirmButtonText: 'Comprar',
+                            imageUrl: String(comic.thumbnail.path + '.' + comic.thumbnail.extension),
+                            imageWidth: 400,
+                            imageHeight: 400,
+                            imageAlt: 'Custom image',
+                            showCloseButton: true, 
+                        });
+                    };
                     return (
-                        <>
+                        <div className={styles.Tryy}>
                             <ComicsImg id={comic.id} title={comic.title} description={comic.description} characters={comic.characters} creators={comic.creators} price={comic.price} thumbnail={comic.thumbnail} />
-                        </>
+                            
+                            <Button style={{ backgroundColor: '#E62429', width: '200px', height: '40px', borderRadius: '8px', border: 'none', color: 'white', fontSize: '20px', cursor: 'pointer',}}
+                                onClick={successAlert}
+                            >
+                                Saiba Mais
+                            </Button>
+                        </div>
                     )
                 })}
             </div>
+
         </div>
     )
 }

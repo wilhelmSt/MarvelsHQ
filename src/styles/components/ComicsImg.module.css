@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 20rem;
     height: 22rem;
     position: relative;
@@ -71,25 +72,6 @@
     font-family: 'Josefin Slab', serif;
     text-align: center;
 }
-
-.imgbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: rgba(255,255,255,0.7);
-    transition: 0.2s;
-    border-radius: 25px;
-    font-size: 1.9rem;
-    padding: 2px 0;
-    width: 85%;
-    font-family: 'Josefin Slab', serif;
-    font-weight: 400;
-}
-.imgbutton:hover {
-    background-color: #FFF;
-}
-
 .imgtest:hover > .imgbg{
     opacity: 0.7;
 }
