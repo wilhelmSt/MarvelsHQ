@@ -44,12 +44,12 @@ const Comics: React.FC = () => {
                     const successAlert = () => {
                         const title = comic.title;
                         const desc = comic.description;
-                        const char = comic.characters;
+                        const price = comic.price;
                         Swal.fire({
                             title: title,
                             html: "<p>" +desc+ "</p>" +
-                                  "<h2> Personagens: </h2>" +
-                                  "<p>" +char+ "</p>",
+                                  "<h3>Preço</h3>" +
+                                  "<p> U$ " +price+ "</p>",
                             backdrop: 'rgba(0,0,123,0.4)',
                             background: 'white',
                             showCancelButton: true,

@@ -16,7 +16,8 @@ const api = axios.create({
         apikey: publicKey,
         hash,
         offset: 3,
-        limit: 12
+        limit: 12,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     },
 })
 
