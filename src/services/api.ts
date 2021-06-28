@@ -17,7 +17,12 @@ const api = axios.create({
         hash,
         offset: 3,
         limit: 12,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {                  
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Authorization", 
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE" ,
+            "Content-Type": "application/json;charset=UTF-8"                   
+        },
     },
 })
 
