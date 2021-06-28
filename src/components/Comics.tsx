@@ -28,7 +28,12 @@ const Comics: React.FC = () => {
             .then(response => {
                 setComic(response.data.data.results)
             })
-            .catch(err => console.log('Ocorreu um erro', err))
+            .catch(error => {
+                Swal.fire({
+                    title: 'Ocorreu um erro',
+                    text: error,
+                })
+            })
     }, [])
 
     
